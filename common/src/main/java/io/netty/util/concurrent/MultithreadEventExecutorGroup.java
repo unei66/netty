@@ -69,6 +69,13 @@ public abstract class MultithreadEventExecutorGroup extends AbstractEventExecuto
         this(nEventExecutors, executor, false, args);
     }
 
+    /**
+     * EventLoopGroup 初始化
+     * @param nEventExecutors
+     * @param executor
+     * @param shutdownExecutor
+     * @param args
+     */
     private MultithreadEventExecutorGroup(int nEventExecutors,
                                           Executor executor,
                                           boolean shutdownExecutor,
@@ -78,6 +85,7 @@ public abstract class MultithreadEventExecutorGroup extends AbstractEventExecuto
                     String.format("nEventExecutors: %d (expected: > 0)", nEventExecutors));
         }
 
+        //executor 默认传入为null
         if (executor == null) {
             executor = newDefaultExecutorService(nEventExecutors);
             shutdownExecutor = true;

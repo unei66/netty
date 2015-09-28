@@ -18,6 +18,7 @@ public class TimeServer {
 	}
 	
 	public void run() throws Exception{
+        //新建两个EventLoopGroup
 		EventLoopGroup bossGroup=new NioEventLoopGroup();
 		EventLoopGroup workerGroup=new NioEventLoopGroup();
 		
